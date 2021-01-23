@@ -23,6 +23,7 @@ void Roomba::reset()
 void Roomba::start()
 {
     _serial->begin(_baud);
+    delay(50);
     _serial->write(128);
 }
 
@@ -55,7 +56,7 @@ uint32_t Roomba::baudCodeToBaudRate(Baud baud)
 	case Baud115200:
 	    return 115200;
 	default:
-	    return 57600;
+	    return 115200;
     }
 }
 
